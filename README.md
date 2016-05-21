@@ -1,3 +1,4 @@
 # New-Project
 This is my first project on github
-Created a file to practice python programs 
+
+Created this file to practice python programs 
