@@ -113,27 +113,76 @@
 ##n = int(raw_input("How many random number do you want to be displayed: "))
 ##print random_num(n)
 
+##def copyFile(oldfile, newfile):
+##    f1 = open(oldfile, "r")
+##    f2 = open(newfile, "w")
+##    while True:
+##        text = f1.read(5)
+##        if text == "":
+##            break
+##        f2.write(text)
+##    #f2 = open(newfile, "r")
+##    #print f2.read()
+##    f1.close()
+##    f2.close()
+##    return
+##oldfile = "D:/LEARNING/PYTHON/OLD.txt"
+##newfile = "D:/LEARNING/PYTHON/NEW.txt"
+##new = open(newfile, "r")
+##print new.read()
+##copyFile(oldfile, newfile)
+##new = open(newfile, "r")
+##print new.read()
+##new.close()
+
+##f = open("D:/LEARNING/PYTHON/OLD.txt", "w")
+##f.write("Line one\nLine two\nLine three\n")
+##f.close()
+##f = open("D:/LEARNING/PYTHON/OLD.txt", "r")
+##print f.readline()
+##print f.readlines()
+##print f.readline()
+##print f.readlines()
+
+
 def copyFile(oldfile, newfile):
     f1 = open(oldfile, "r")
     f2 = open(newfile, "w")
     while True:
-        text = f1.read(5)
+        text = f1.readline()
         if text == "":
             break
+        if text[0] == '#':
+            continue
         f2.write(text)
-    #f2 = open(newfile, "r")
-    #print f2.read()
     f1.close()
     f2.close()
     return
 oldfile = "D:/LEARNING/PYTHON/OLD.txt"
 newfile = "D:/LEARNING/PYTHON/NEW.txt"
-new = open(newfile, "r")
-print new.read()
 copyFile(oldfile, newfile)
 new = open(newfile, "r")
 print new.read()
 new.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
