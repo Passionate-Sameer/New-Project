@@ -104,16 +104,36 @@
 ##word = raw_input("Please input a word and press enter: ")
 ##letterCount(word)
 
-import random
-def random_num(n):
-    s = []
-    for i in range(n):
-        s.append(int(random.random()*100))
-    return s
-n = int(raw_input("How many random number do you want to be displayed: "))
-print random_num(n)
+##import random
+##def random_num(n):
+##    s = []
+##    for i in range(n):
+##        s.append(int(random.random()*100))
+##    return s
+##n = int(raw_input("How many random number do you want to be displayed: "))
+##print random_num(n)
 
-
+def copyFile(oldfile, newfile):
+    f1 = open(oldfile, "r")
+    f2 = open(newfile, "w")
+    while True:
+        text = f1.read(5)
+        if text == "":
+            break
+        f2.write(text)
+    #f2 = open(newfile, "r")
+    #print f2.read()
+    f1.close()
+    f2.close()
+    return
+oldfile = "D:/LEARNING/PYTHON/OLD.txt"
+newfile = "D:/LEARNING/PYTHON/NEW.txt"
+new = open(newfile, "r")
+print new.read()
+copyFile(oldfile, newfile)
+new = open(newfile, "r")
+print new.read()
+new.close()
 
 
 
