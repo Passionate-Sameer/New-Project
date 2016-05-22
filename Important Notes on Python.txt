@@ -1,0 +1,317 @@
+IDE/IDLE -> Integrated DeveLopment Environment
+
+- Syntax -> Structure of a program
+- Static Semantics -> if a = 6, c=0, a/c not static semantically correct
+- Semantics -> 
+
+- Runtime error/Exception: occurs when program is executed and prevents the program from continuing.
+
+- Keywords: are reserved words that cannot be used for variable names.
+
+- Intepreted language (NO Binary/Executable/object code file created)
+- Compiled language (Binary/Executable/object code file is created)
+
+- Script is a program stored in a file (ususally one that will be interpreted)
+
+- Program : Sequences of expressions or a set of instructions to do a specific task
+
+- Statement: is an instruction that interpreter can execute.
+
+- A function is a named sequence of statements that performs a desired operation
+
+- A function takes an argument and returns a value. 
+
+- The statements inside the function do not get executed until the function is called.
+- A parameter is a name used inside a function to refer to the value passed as an argument.
+
+- Formal parameter
+- Actual parameter
+
+- Invoke a function/method = Call a function/method
+
+- A method is similar to a function (it takes arguments and returns a value) but the syntax 
+  is different.
+  e.g. dictionary_name.keys(), dictionary_name.values(), dictionary_name.items()
+
+- A module is a file that contains a collection of related functions grouped together
+
+- Recursion is a process of calling the function that is currently executing.
+
+- Data type:
+   int, float, string, boolean, list[], tuple(), dictionary{}
+
+- Block of code
+- Indentation
+- Iteration: Repeated execution (of a block of code)
+
+- Straight line program: Go down line by line and execute every expression once
+- Branched program: 
+
+- Flow of execution: Order/sequence in which statements are executed.
+
+- Delimiter: A character or string used to indicate where a string should be split.
+
+
+Exponential/power of(**)
+Modulus/remainder(%)
+Operators (+, -, *, /, //, **, %)
+Operands
+
+- Operator Overloading : Opertor behaving differently with different data types
+ E.g.: (+ operator) Adds 2 numbers, concatenates 2 strings, merges 2 lists
+
+STRINGS ""
+==========
+
+string = ''        # Empty string
+string = 'sameer'  # sameer is a string
+for n in string:
+    print n,       # Output is s a m e e r
+print string	   # Output is sameer
+
+#Accessing the elements of a string
+print string[0]	   # Output is s
+print string[-1]   # Output is -1
+
+#String Slicing
+print string[:]	   # Output is sameer
+print string[0:3]  # Output is sam (first index inclusive second exclusive) 
+
+#Strings are immutable(UN-CHANGABLE)
+string.append('sam')   # ERROR (existing string cannot be changed)
+greeting = "Hello world!"
+greeting[0] = 'J'      # ERROR (existing string cannot be changed)
+newGreeting = 'J'+ greeting[1:] #Concatenate letter J onto a slice of greeting.
+print newGreeting      # Jello world! (No effect on original string)
+
+LISTS []
+========
+
+- A list is an ordered set of values, where each value is identified by an index.
+- Elements: values in a list that make up a list
+- Lists can have elements of any type (string can have elements of only 'str' type)
+- Lists are mutable (CHANGABLE)
+
+list = []		#Empty list
+list = ["hello", 2.0, 5, [10, 20]]	#Lists can have elements of any type
+
+#Accessing the elements of a List
+print list[0]	        # Output is hello
+print list[-1]          # Output is [10, 20]
+print list[-1][0]       # Output is 10
+
+range(start, stop, step)#range function
+list = range(1,6)       # Takes two arguments and returns a list
+print list		# Output is [1, 2, 3, 4, 5]
+list = range(11)	# Starts from 0
+print list		# Output is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+list = range(1, 10, 2)
+print list		# Output is [1, 3, 5, 7, 9]
+
+#List Slicing
+print list[:]	        # Output is ["hello", 2.0, 5, [10, 20]]
+print list[0:2]         # Output is ["hello", 2.0] (first index inclusive second exclusive) 
+
+#Lists are mutable(CHANGABLE - elements can be changed) 
+
+Addition of an element in a list
+================================
+list = ["hello", 2.0, 5, [10, 20]]
+list.append('sam')      # Element will be added but in the last of the list
+print list	        # Output is ["hello", 2.0, 5, [10, 20], 'sam']
+
+list = [1, 2, 3, 4, 5]	# Both the indexes should be same to add an element 
+list[5:5] = [6]		# Square brackets are required to add an element
+print list 		# Output will be [1, 2, 3, 4, 5, 6]
+list[4:4] = [6]		
+print list 		# Output will be [1, 2, 3, 4, 6, 5]
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = list1 + list2	# Lists can be concatenated by + operator
+print list3		# Output will be [1, 2, 3, 4, 5, 6]
+#Empty list cannot be created in a list
+
+Deletion of an element from the list
+====================================
+list = ["hello", 2.0, 5, [10, 20]]
+del list[-1]		# Specific element can be deleted
+print list		# Output will be ["hello", 2.0, 5]
+del list[1:3]		# A number of elements can be deleted
+print list		# Output will be ["hello", [10, 20]]
+
+list = [1, 2, 3, 4, 5]	# Second index should be greater than first element 
+list[4:5] = []		# Empty Square brackets are required when using slice operator
+print list 		# Output will be [1, 2, 3, 4]
+list[4:4] = []		# Nothing will happen to the list!!!
+print list 		# Output will be [1, 2, 3, 4, 5]
+
+Replacing of elements in a list
+===============================
+list = [1, 2, 3, 4, 5]	# Second index should be greater than first element
+list[4:5] = [100]	# Square brackets are required when using slice operator
+print list 		# Output will be [1, 2, 3, 4, 100]
+list[3:5] = [100, 1000]	# Replacing more than one element
+pring list		# Output will be [1, 2, 3, 100, 1000]
+
+Nested Lists
+============
+list = ["hello", 2.0, 5, [10, 20], ['A', 'B', 'C', 'D']]
+print list[4][0]	# Output will be A
+
+list[4][4:4] = 'E'	# Addition of element in nested list
+print list		# Output will be ["hello", 2.0, 5, [10, 20], ['A', 'B', 'C', 'D', 'E']]
+
+del list[4][-1]
+print list		# Output will be ["hello", 2.0, 5, [10, 20], ['A', 'B', 'C']]
+
+
+Joining and Spliting Lists/strings
+==================================
+
+SPLIT (String -> List)
+-string.split(string_name, delimiter) # Delimiter does not appear in the list
+
+import string
+song = "The rain in Spain..."	# Works with string only
+list = string.split(song)	# By default, whitespace is the delimiter (word boundary)
+print list		# Output will be ['The', 'rain', 'in', 'Spain...']
+list2 = string.split(song, 'ai')
+print list2		# Output will be ['The r', 'n in Sp', 'n...'] 
+
+JOIN (List -> String)
+-string.join(List_name, delimiter)
+
+list = ['The', 'rain', 'in', 'Spain...']
+string1 = string.join(list)	# Elements of the list should be STRING ONLY
+print string1		# Output will be "The rain in Spain..."
+string2 = string.join(list, '_')
+
+
+TUPLES ()
+=========
+Tuples are same as lists but are immutable. 
+Tuples can be used wherever an immutable type is required, such as key in a dictionary.
+
+empty_tuple = ()
+one_element = ('a', ) # Final comma is required to create a tuple with a single element.
+string = ('a')	      # Without the comma, python treats ('a') as a string in parentheses.
+
+# Operations on tuples are same as the operations on lists.
+# Tuples can have elements of any type (same as the lists)
+
+tuple = ('a', 'b', 'c', 'd', 'e')
+print tuple[0]			# Output will be 'a'
+print tuple[1:3]		# Output will be 'b', 'c'
+
+tuple[0] = 'A'			# ERROR! Unlike lists, Tuples are immutable.
+tuple = ('A',) + tuple[1:]	# A tuple can be replaced by another tuple
+print tuple			# Output will be ('A', 'b', 'c', 'd', 'e')
+
+
+Dictionaries {}
+===============
+
+- A dictionary is a collection of key-value pairs. 
+  Keys can be any immutable type, and values can be any type.
+- Key is a value that is used to look up an entry in a dictionary.
+
+dictionary = {}			# An empty dictionary
+
+dictionary = {'one': 'ichi', 'two': 'ni'}
+print dictionary['one']		# Output will be 'ichi'
+
+Adding key-value pair
+=====================
+
+dictionary['three'] = 'san'	# Square brackets are used
+dictionary['four'] = 'yon'
+print dictionary		# Output will be {'one': 'ichi', 'two': 'ni', 'three': 'san', 'four': 'yon'}
+
+# Key-value pairs are not in order in a dictionary
+
+Deleting key-value pair
+=======================
+
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+inventory['pears'] = 0
+print inventory		# Output will be {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 0}
+
+del inventory['pears']
+print inventory		# Output will be {'apples': 430, 'bananas': 312, 'oranges': 525}
+
+print len(inventory)	# Output will be 3
+
+print inventory.keys()	# Output will be {'apples', 'bananas', 'oranges'}
+print inventory.values()# Output will be {430, 312, 525}
+print inventory.items() # Output will be [('apples', 430), ('bananas', 312), ('oranges', 525)]
+# items method returns keys and values in the form of a list of tuples.
+
+print inventory.has_key('apples')	# Output will be True
+print inventory.has_key('berry')	# Output will be False
+
+print inventory.get('apples', 0)	# Output will be 1
+print inventory.get('berry', 0)		# Output will be 0
+# In the get() function, first argument is the key; second argument is the value get should
+  return if the key is not in the dictionary
+
+===========================================================================================
+
+FILES
+=====
+
+
+- While a program is running, its data is in memory. 
+  When the program ends, or the computer shuts down, data in memory disappears. 
+
+- By reading and writing files, programs can exchange information with each other and
+  generate printable formats like PDF.
+
+- Opening a file creates a file object.The open function takes two arguments. 
+  The first is the name of the file, and the second is the mode. 
+
+# Either for reading or writing into a file, first we have to open a file, and after 
+  when we are done with reading or writing we have to close the file to reflect the changes.
+
+  E.g. f = open("test.dat","w") 
+  # If there is no file named test.dat, it will be created. 
+    If there already is one, it will be replaced by the file we are writing.
+  # Mode "w" means that we are opening the file for writing.
+
+WRITING to a file
+=================
+
+Three steps
+1) file_object = open("file name", "mode")
+2) file_object.write("Content")	# Be careful all existing contents in the file will be overwritten
+3) file_object.close()		# Closing a file is necessary to reflect changes
+
+- To put data in the file we invoke the write method on the file object:
+>>> f.write("Now is the time ") 
+>>> f.write("to close the file")  
+
+- Closing the file tells the system that we are done writing and makes the file 
+  available for reading.
+>>> f.close() 
+
+READING from a file
+====================
+
+Three steps
+1) file_object = open("file name", "mode")
+2) variable = file_object.read()	# With no arguments in read method, it reads the entire contents of the file
+3) print variable
+4) file_object.close()
+
+>>> f = open("test.dat","r")
+>>> text = f.read() 
+>>> print text 		# Output will be 'Now is the time to close the file'
+
+- A text file is a file that contains printable characters and whitespace, 
+  organized into lines separated by newline characters.
+
+
+
+
+
+
