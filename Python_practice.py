@@ -144,28 +144,33 @@
 ##print f.readline()
 ##print f.readlines()
 
+##def copyFile(oldfile, newfile):
+##    f1 = open(oldfile, "r")
+##    f2 = open(newfile, "w")
+##    while True:
+##        text = f1.readline()
+##        if text == "":
+##            break
+##        if text[0] == '#':
+##            continue
+##        f2.write(text)
+##    f1.close()
+##    f2.close()
+##    return
+##oldfile = "D:/LEARNING/PYTHON/OLD.txt"
+##newfile = "D:/LEARNING/PYTHON/NEW.txt"
+##copyFile(oldfile, newfile)
+##new = open(newfile, "r")
+##print new.read()
+##new.close()
 
-def copyFile(oldfile, newfile):
-    f1 = open(oldfile, "r")
-    f2 = open(newfile, "w")
-    while True:
-        text = f1.readline()
-        if text == "":
-            break
-        if text[0] == '#':
-            continue
-        f2.write(text)
-    f1.close()
-    f2.close()
-    return
-oldfile = "D:/LEARNING/PYTHON/OLD.txt"
-newfile = "D:/LEARNING/PYTHON/NEW.txt"
-copyFile(oldfile, newfile)
-new = open(newfile, "r")
-print new.read()
-new.close()
-
-
+marks = {"Sameer": 28.6, "Sona": 25.9, "Manish": 24.8, "Varsha":21.9}
+def report (marks):
+    students = marks.keys()
+    students.sort()
+    for student in students:
+        print "%-20s %12.2f" % (student, marks[student])
+report(marks)
 
 
 
