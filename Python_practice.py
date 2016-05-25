@@ -163,34 +163,75 @@
 ##new = open(newfile, "r")
 ##print new.read()
 ##new.close()
-
-marks = {"Sameer": 28.6, "Sona": 25.9, "Manish": 24.8, "Varsha":21.9}
-def report (marks):
-    students = marks.keys()
-    students.sort()
-    for student in students:
-        print "%-20s %12.2f" % (student, marks[student])
-report(marks)
-
-
+##
+##marks = {"Sameer": 28.6, "Sona": 25.9, "Manish": 24.8, "Varsha":21.9}
+##def report (marks):
+##    students = marks.keys()
+##    students.sort()
+##    for student in students:
+##        print "%-20s %12.2f" % (student, marks[student])
+##report(marks)
 
 
+###Create a program that asks the user to enter their name and their age.
+###Print out a message addressed to them that tells them the year that they
+###will turn 100 years old.
+##from datetime import date
+##name = raw_input("Please enter your name: ")
+##age = int(raw_input("Please enter your age: "))
+##current_year = date.today().year
+##diff_age = 100 - age
+##turn_hundred = current_year + diff_age
+##print "The year in which %s will turn 100 is %d" % (name, turn_hundred)
+##times = int(raw_input("Please enter a number: "))
+##print times*("The year in which %s will turn 100 is %d\n" % (name, turn_hundred))
+##
+
+###Number is EVEN OR ODD
+##number = int(raw_input("Please enter a number: "))
+##if number%2==0:
+##    print "The number(%d) you have entered is an EVEN number" % number
+##    if number%4==0:
+##        print "The number(%d) you have entered is divisible by 4" % number    
+##else:
+##    print "The number(%d) you have entered is an ODD number" % number
 
 
+###A program that prints out all the elements of the list that are less than 5
+##a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+##print "The given list is ", a
+##number = int(raw_input("Please enter a number: "))
+##print "The numbers in this list that are less than %d are " % number
+##new_list=[]
+##for n in a:
+##    if n < number:
+##        new_list.append(n)
+##print new_list
+
+##number = int(raw_input("Please enter a number: "))
+##divisors=[]
+##for n in range(1, number+1):
+##    if number%n == 0:
+##        divisors.append(n)
+##print divisors
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+##while True:
+##    try:
+##        n = int(raw_input("Please choose a number to divide: "))
+##        list = [d for d in range(1, n + 1) if n % d == 0]
+##        if len(list) > 2:
+##            print "The divisors of %d are: " % n, list
+##        else :
+##            print str(n) + " is a prime number"
+##    except ValueError:
+##        print "\nVery funny smartness. Now give me a number."
+##    try:
+##        cont = raw_input("Do you want to continue(Y/N): ")
+##        if cont == 'n' or cont == 'N':
+##            break
+##    except:               #except statement not correct
+##        print "Program has exited!!" 
 
 
 

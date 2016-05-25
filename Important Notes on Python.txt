@@ -100,6 +100,7 @@ print list[0]	        # Output is hello
 print list[-1]          # Output is [10, 20]
 print list[-1][0]       # Output is 10
 
+#List creation
 range(start, stop, step)#range function
 list = range(1,6)       # Takes two arguments and returns a list
 print list		# Output is [1, 2, 3, 4, 5]
@@ -107,6 +108,10 @@ list = range(11)	# Starts from 0
 print list		# Output is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 list = range(1, 10, 2)
 print list		# Output is [1, 3, 5, 7, 9]
+
+num = int(raw_input("Please enter a number: "))
+list = [n for n in range(1, num) if num%n == 0]
+print list
 
 #List Slicing
 print list[:]	        # Output is ["hello", 2.0, 5, [10, 20]]
@@ -309,6 +314,49 @@ Three steps
 
 - A text file is a file that contains printable characters and whitespace, 
   organized into lines separated by newline characters.
+
+- The break statement breaks out of the loop; 
+  the flow of execution moves to the first statement after the loop.
+
+- The continue statement ends the current iteration of the loop, but continues looping. 
+  The flow of execution moves to the top of the loop, checks the condition, and 
+  proceeds accordingly.
+
+- In order to put values into a file, you have to convert them to strings.
+
+
+
+- Exception(runtime error): An error that occurs at runtime.
+- Whenever a runtime error occurs, it creates an exception. 
+  Usually, the program stops and Python prints an error message.
+
+- Exception handling: To prevent an exception from terminating a program.
+
+- Sometimes we want to execute an operation that could cause an exception, 
+  but we don't want the program to stop. 
+  We can handle the exception using the try and except statements.
+
+==========================================================================================
+
+Class
+=====
+
+- Class: is a user defined compound type.
+
+- Class definitions can appear anywhere in a program, 
+  but they are usually near the beginning (after the import statements).
+
+- Members of a class are called instances or objects.
+
+- Creating a new instance is called instantiation.
+
+- 
+
+
+
+
+
+
 
 
 
