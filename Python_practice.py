@@ -234,5 +234,50 @@
 ##        print "Program has exited!!" 
 
 
+##def check_if_present(n):
+##    for k in list:
+##        if n == k:
+##            return True
+##        else:
+##            return False
 
+
+
+##import random
+##def random_list(n):
+##    s = [int(random.random()*100) for i in range(n)]
+####    s = []
+####    for i in range(n):
+####        s.append(int(random.random()*100))
+##    return s
+##try:
+##    n1 = int(raw_input("\nHow many random numbers do you want in list 1: "))
+##    n2 = int(raw_input("How many random numbers do you want in list 2: "))
+##    list1 = random_list(n1)
+##    list2 = random_list(n2)
+##    print "The two lists with random numbers are\n", list1, '\n', list2
+##    #list = []
+##    for n in list1:
+##        list = [n for m in list2 if n == m and n not in list]
+####      for m in list2:
+####          if n == m and n not in list:
+####              list.append(n)
+##    if len(list) == 0:
+##        print "There are no common numbers in the list"
+##    else:
+##        print "List of common numbers in two lists is: ", list
+##except ValueError: 
+##    print "\nINVALID input. Program is terminating!!!"
+
+#Combining similar items of two lists into one
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+c = list(set([x for x in a for y in b if x == y]))
+print c
+
+# for randomly generated lists!
+import random
+a, b = random.sample(range(100),10), random.sample(range(100),10)
+c = list(set([x for x in a for y in b if x == y]))
+print c
 

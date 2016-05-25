@@ -192,6 +192,24 @@ string1 = string.join(list)	# Elements of the list should be STRING ONLY
 print string1		# Output will be "The rain in Spain..."
 string2 = string.join(list, '_')
 
+Checking item in list
+=====================
+
+#One of the interesting things you can do with lists in Python is figure out whether 
+ something is inside the list or not. For example:
+>>> a = [5, 10, 15, 20]
+>>> 10 in a
+True
+>>> 3 in a
+False
+
+#You can use this in loops, conditionals, and any other programming constructs.
+
+list_of_students = ["Michele", "Sara", "Cassie"]
+name = raw_input("Type name to check: ")
+if name in list_of_students:
+    print("This student is enrolled.")
+
 
 TUPLES ()
 =========
@@ -259,6 +277,84 @@ print inventory.get('apples', 0)	# Output will be 1
 print inventory.get('berry', 0)		# Output will be 0
 # In the get() function, first argument is the key; second argument is the value get should
   return if the key is not in the dictionary
+
+
+SETS
+====
+
+#Sets are lists with unique entries (no duplicate entries).
+#Sets are immutable
+#Sets can have any value type
+
+>>> print set("my name is Eric and Eric is my name".split())
+set(['and', 'is', 'my', 'name', 'Eric'])			#Duplicate entries removed
+
+>>> print list(set("my name is Eric and Eric is my name".split()))   # Converts to list
+['and', 'is', 'my', 'name', 'Eric']
+
+list() method
+=============
+
+#Takes tuple/list/set and converts them to lists
+#For dictionaries it print only list of keys
+
+>>> aTuple = (123, 'xyz', 'zara', 'abc');
+>>> aList = list(aTuple)
+>>> print "List elements : ", aList
+List elements :  [123, 'xyz', 'zara', 'abc']
+
+
+
+- SetName.add(x) function can be used to add element to a set.
+- SetName.remove(x) function can be used to remove an element from a set.
+- SetName.update(x,y,z) function can be used to add a group of elements to a set.
+- SetName.copy() function can be used to create clone of set.
+- SetName.clear() function can be used to remove all elements from a set.
+
+OPERATION ON TWO SETS
+=====================
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+
+
+#Join two sets (new set with elements from both a and b)
+>>> a.union(b)			# OR    a | b | c (for more than 2 sets)
+set(['Jill', 'Jake', 'John', 'Eric'])
+
+#Common items (new set with elements common to a and b)
+>>> a.intersection(b)		# OR    a & b
+set(['John'])
+>>> b.intersection(a)
+set(['John'])
+
+#Removing a common entry from both sets (new set with elements in either a or b but not both)
+>>> a.symmetric_difference(b)	# OR    a ^ b 		
+set(['Jill', 'Jake', 'Eric'])
+>>> b.symmetric_difference(a)
+set(['Jill', 'Jake', 'Eric'])
+
+#Removing a common entry from one set (new set with elements in a but not in b)
+>>> a.difference(b)		# OR    a - b 
+set(['Jake', 'Eric'])
+>>> b.difference(a)
+set(['Jill'])
+
+
+
+Comparison between LISTS, DICTIONARIES, SETS
+============================================
+LISTS: Are ordered, indexed with integers, can have duplicate entries
+Dictionaries: Not ordered, indexed with keys, Unique keys
+SETS: NOT ordered, NOT indexed, Unique entries
+
+
+RANDOM NUMBERS
+==============
+>>> import random
+>>> a = random.sample(range(100),10)
+>>> print a
+[6, 95, 99, 67, 88, 17, 94, 56, 90, 83]
+
 
 ===========================================================================================
 
