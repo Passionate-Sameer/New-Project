@@ -280,13 +280,37 @@
 ##a, b = random.sample(range(100),10), random.sample(range(100),10)
 ##c = list(set([x for x in a for y in b if x == y]))
 ##print c
+##
+###Print out whether user given string is a palindrome or not
+##user_string = raw_input("Please enter a string: ")
+##string_to_lowercase = user_string.lower()
+##if string_to_lowercase[::-1] == string_to_lowercase:    #Reversing a string
+##    print "The string you have entered is a Palindrome"
+##else:
+##    print "The string you have entered is NOT a Palindrome"
+##
 
-#Print out whether user given string is a palindrome or not
-user_string = raw_input("Please enter a string: ")
-string_to_lowercase = user_string.lower()
-if string_to_lowercase[::-1] == string_to_lowercase:    #Reversing a string
-    print "The string you have entered is a Palindrome"
-else:
-    print "The string you have entered is NOT a Palindrome"
+# Code for "Do you want to continue(y/n): "
+condition = True
+while condition:
+
+
+    print "Awesome"
+
+
+    reply = raw_input("\nDo you want to continue(Y/N): ")
+    if reply == 'N' or reply == 'n':
+        condition = False
+
+
+      
+
+
+
+
+
+
+
+
 
 
