@@ -290,20 +290,145 @@
 ##    print "The string you have entered is NOT a Palindrome"
 ##
 
-# Code for "Do you want to continue(y/n): "
-condition = True
-while condition:
+### Code for "Do you want to continue(y/n): "
+##condition = True
+##while condition:
+##
+##
+##    print "Awesome"
+##
+##
+##    reply = raw_input("\nDo you want to continue(Y/N): ")
+##    if reply == 'N' or reply == 'n':
+##        condition = False
 
 
-    print "Awesome"
+#Program for Rock, Paper, Scissors
+def check_who_wins(player_1, player_2, player_1_name, player_2_name):
+    if player_1 == player_2:
+        print "\nIt's a tie! Both of you chose %s" % (convert_to_word(player_1))
+    else:
+        if player_2_name == 'COMPUTER':      
+            if(player_2 == 'r' and player_1 == 's') or \
+                (player_2 == 's' and player_1 == 'p') or \
+                (player_2 == 'p' and player_1 == 'r'):
+                print "\nCOMPUTER Won! You Lose. Better luck next time..."
+                print_selection(player_1, player_2, "You", player_2_name)
+                rules()
+        else:
+            if(player_1 == 'r' and player_2 == 's') or \
+                (player_1 == 's' and player_2 == 'p') or \
+                (player_1 == 'p' and player_2 == 'r'):
+                print "\n%s Won!  CONGRATULATIONS!!!" % player_1_name.upper()
+                print_selection(player_1, player_2, player_1_name, player_2_name)
+                rules()
+            elif(player_2 == 'r' and player_1 == 's') or \
+                (player_2 == 's' and player_1 == 'p') or \
+                (player_2 == 'p' and player_1 == 'r'):   
+                print "\n%s Won!  CONGRATULATIONS!!!" % player_2_name.upper()
+                print_selection(player_1, player_2, player_1_name, player_2_name)
+                rules()
+    check_if_play_again()
+
+def rules():
+    print "\nRules: \nROCK beats SCISSORS\nSCISSORS beats PAPER\nPAPER beats ROCK"
+
+def print_selection(player_1, player_2, player_1_name, player_2_name):
+    print "%s chose %s and %s chose %s" % (player_1_name.upper(), convert_to_word(player_1), player_2_name.upper(), convert_to_word(player_2))
+
+def convert_to_word(player):
+    if player == 'r':
+        return "ROCK"
+    if player == 's':
+        return "SCISSORS"
+    if player == 'p':
+        return "PAPER"
 
 
-    reply = raw_input("\nDo you want to continue(Y/N): ")
-    if reply == 'N' or reply == 'n':
-        condition = False
+def check_if_play_again():
+    condition = True
+    while condition:
+        play_again = raw_input("\nDo you want to play again (Y/N): ").lower()
+        if play_again == 'n':
+            print "\nThanks for playing. Hope you enjoyed!\n"
+            condition = False
+        elif play_again == 'y':
+            return play_with()
+        
+def player_input(player_name):
+    while True:
+        print "\t\t\t%s \n\nIt's your turn: Please choose between Rock, Paper, Scissors." % player_name.upper()
+        player = raw_input("Press R for Rock, P for Paper, S for Scissors: ").lower()
+        if player == 'r' or 's' or 'p':   
+            return player
+        else:
+            print "\n\nPlease provide a valid input."
+    
+def clear_screen():
+    for n in range(20):
+        print '\n'
+
+import random
+def computer_input():
+    comp_turn = random.sample(range(1,4),1)
+    if comp_turn == [1]:
+        return 'r'
+    elif comp_turn == [2]:
+        return 's'
+    elif comp_turn == [3]:
+        return 'p'
+
+def play_with_computer():
+    print "\nYou chose to play with Computer!"
+    player_1_name = raw_input("Please enter your name: ")
+    player_2_name = 'COMPUTER'
+    clear_screen()
+    player_1 = player_input(player_1_name)
+    player_2 = computer_input()
+    
+    check_who_wins(player_1, player_2, player_1_name, player_2_name)    
+
+def play_with_friend():
+    print "\nYou chose to play with friend!"
+    player_1_name = raw_input("Player 1: Please enter your name: ")
+    player_2_name = raw_input("Player 2: Please enter your name: ")
+
+    clear_screen()
+    player_1 = player_input(player_1_name)
+    clear_screen()
+    player_2 = player_input(player_2_name)
+
+    check_who_wins(player_1, player_2, player_1_name, player_2_name)
+    
+def play_with():
+    while True:
+        print "\nDo you want to play with computer or with your friend?"
+        comp_or_frnd = raw_input("Press C for computer or F for friend: ").lower()
+        if comp_or_frnd == 'c': 
+            return play_with_computer()
+        elif comp_or_frnd == 'f':
+            return play_with_friend()
+        else:
+            print "\n\nPlease provide a valid input."
+clear_screen()
+print "Welcome to Rock, Paper, Scissors game!"
+play_with()
 
 
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
