@@ -303,38 +303,17 @@
 ##        condition = False
 
 
-#Program for Rock, Paper, Scissors
-def check_who_wins(player_1, player_2, player_1_name, player_2_name):
-    if player_1 == player_2:
-        print "\nIt's a tie! Both of you chose %s" % (convert_to_word(player_1))
-    else:
-        if player_2_name == 'COMPUTER':      
-            if(player_2 == 'r' and player_1 == 's') or \
-                (player_2 == 's' and player_1 == 'p') or \
-                (player_2 == 'p' and player_1 == 'r'):
-                print "\nCOMPUTER Won! You Lose. Better luck next time..."
-                print_selection(player_1, player_2, "You", player_2_name)
-                rules()
-        else:
-            if(player_1 == 'r' and player_2 == 's') or \
-                (player_1 == 's' and player_2 == 'p') or \
-                (player_1 == 'p' and player_2 == 'r'):
-                print "\n%s Won!  CONGRATULATIONS!!!" % player_1_name.upper()
-                print_selection(player_1, player_2, player_1_name, player_2_name)
-                rules()
-            elif(player_2 == 'r' and player_1 == 's') or \
-                (player_2 == 's' and player_1 == 'p') or \
-                (player_2 == 'p' and player_1 == 'r'):   
-                print "\n%s Won!  CONGRATULATIONS!!!" % player_2_name.upper()
-                print_selection(player_1, player_2, player_1_name, player_2_name)
-                rules()
-    check_if_play_again()
-
+#Program for "Rock, Paper, Scissors" game
+#Game can be played with computer or with another player
 def rules():
     print "\nRules: \nROCK beats SCISSORS\nSCISSORS beats PAPER\nPAPER beats ROCK"
 
 def print_selection(player_1, player_2, player_1_name, player_2_name):
     print "%s chose %s and %s chose %s" % (player_1_name.upper(), convert_to_word(player_1), player_2_name.upper(), convert_to_word(player_2))
+    
+def clear_screen():
+    for n in range(20):
+        print '\n'
 
 def convert_to_word(player):
     if player == 'r':
@@ -343,7 +322,6 @@ def convert_to_word(player):
         return "SCISSORS"
     if player == 'p':
         return "PAPER"
-
 
 def check_if_play_again():
     condition = True
@@ -363,10 +341,6 @@ def player_input(player_name):
             return player
         else:
             print "\n\nPlease provide a valid input."
-    
-def clear_screen():
-    for n in range(20):
-        print '\n'
 
 import random
 def computer_input():
@@ -385,19 +359,16 @@ def play_with_computer():
     clear_screen()
     player_1 = player_input(player_1_name)
     player_2 = computer_input()
-    
     check_who_wins(player_1, player_2, player_1_name, player_2_name)    
 
 def play_with_friend():
     print "\nYou chose to play with friend!"
     player_1_name = raw_input("Player 1: Please enter your name: ")
     player_2_name = raw_input("Player 2: Please enter your name: ")
-
     clear_screen()
     player_1 = player_input(player_1_name)
     clear_screen()
     player_2 = player_input(player_2_name)
-
     check_who_wins(player_1, player_2, player_1_name, player_2_name)
     
 def play_with():
@@ -410,32 +381,33 @@ def play_with():
             return play_with_friend()
         else:
             print "\n\nPlease provide a valid input."
+
+def check_who_wins(player_1, player_2, player_1_name, player_2_name):
+    if player_1 == player_2:
+        print "\nIt's a tie! Both of you chose %s" % (convert_to_word(player_1))
+    else:
+        if ((player_2_name == 'COMPUTER') and \
+            ((player_2 == 'r' and player_1 == 's') or \
+                (player_2 == 's' and player_1 == 'p') or \
+                (player_2 == 'p' and player_1 == 'r'))):
+                print "\nCOMPUTER Won! You Lose. Better luck next time..."
+                print_selection(player_1, player_2, "You", player_2_name)
+                rules()
+        else:
+            if(player_1 == 'r' and player_2 == 's') or \
+                (player_1 == 's' and player_2 == 'p') or \
+                (player_1 == 'p' and player_2 == 'r'):
+                print "\n%s Won!  CONGRATULATIONS!!!" % player_1_name.upper()
+                print_selection(player_1, player_2, player_1_name, player_2_name)
+                rules()
+            elif(player_2 == 'r' and player_1 == 's') or \
+                (player_2 == 's' and player_1 == 'p') or \
+                (player_2 == 'p' and player_1 == 'r'):   
+                print "\n%s Won!  CONGRATULATIONS!!!" % player_2_name.upper()
+                print_selection(player_1, player_2, player_1_name, player_2_name)
+                rules()
+    check_if_play_again()
+
 clear_screen()
 print "Welcome to Rock, Paper, Scissors game!"
 play_with()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
